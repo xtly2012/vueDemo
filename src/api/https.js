@@ -1,13 +1,15 @@
 import axios from 'axios'
 import { loading, toast } from '@/util'
 
-axios.defaults.baseURL = '/'
+axios.defaults.timeout = 1000
+axios.defaults.baseURL = 'http://localhost:8080'
+
 
 axios.interceptors.request.use(config => {
-  console.log('axios request start')
   loading.show()
+  return config
 }, error => {
-  console.log('axios request error')
+  console.log('axios request error', error)
   loading.hide()
   return Promise.reject(error)
 })
@@ -23,7 +25,7 @@ axios.interceptors.response.use(response => {
 
 const statusHandler = function(error) {
   switch (error.response.status) {
-    case 401:
+    case 404:
       toast.error('登录异常')
       break
   }
@@ -32,13 +34,11 @@ const statusHandler = function(error) {
 
 const https = {
   post(url, data) {
-     axios({
+     return axios({
       method: 'post',
       url: url, 
       data: JSON.stringify(data)
     })
-
-    return 404
   },
   get(url, param) {
     return axios({

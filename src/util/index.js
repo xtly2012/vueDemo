@@ -15,6 +15,6 @@ export const toast = {
 
   },
   error(msg) {
-    
+    console.error('error info : ', msg)
   }
 }

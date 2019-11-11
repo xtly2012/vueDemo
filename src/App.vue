@@ -2,12 +2,19 @@
   <div id="app">
     <img src="./assets/logo.png">
     <router-view/>
+    <button @click="getData">测试</button>
   </div>
 </template>
 
 <script>
+import https from '@/api/https.js'
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    getData() {
+      https.get('/test')
+    }
+  }
 }
 </script>
 
