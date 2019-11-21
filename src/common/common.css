@@ -1,0 +1,7 @@
+.car {
+  border: 1px solid #EEFFAA;
+  margin-top: 10px;
+}
+.car:last-of-type {
+  margin-bottom: 200px;
+}
