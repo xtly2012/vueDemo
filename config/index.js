@@ -12,12 +12,13 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'http://localhost:3000',
+        target: 'http://localhost:8080',
         bypass: function(req, res, proxyOptions) {
+          console.log('test proxy test')
           if (req.headers.accept.indexOf('html') !== -1) {
             console.log('Skipping proxy for browser request.')
             return '/index.html'
-          } else {
+          } else if (process.env.MOCK !== 'none') {
             const name = req.path.split('/api/')[1].split('/').join('_')
             const mock = require(`./mock/${name}`)
             const result = mock(req.method)
@@ -30,7 +31,7 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    port: 8880, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,

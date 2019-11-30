@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { loading, toast } from '@/util'
 
-axios.defaults.timeout = 1000
-axios.defaults.baseURL = 'http://localhost:8080'
+axios.defaults.timeout = 30000
+axios.defaults.baseURL = '/api'
 
 
 axios.interceptors.request.use(config => {

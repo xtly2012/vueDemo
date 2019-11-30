@@ -12,7 +12,6 @@ const store = new Vuex.Store({
   },
   mutations: {
     setSearchParam(state, searchParam) {
-      alert('bbb')
       state.searchParam = searchParam
     }
   }
