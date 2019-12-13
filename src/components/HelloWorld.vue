@@ -5,6 +5,7 @@
     <div>
       <div>a = {{ this.searchParam.name }}</div>
     </div>
+    <Calendar></Calendar>
     <div>
       <Car v-for="(item, index) in list" :key="index" :name="item" />
     </div>
@@ -69,6 +70,9 @@ export default {
     ...mapState({
       searchParam: state => state.searchParam
     })
+  },
+  watch: {
+    
   },
   methods: {
     ...mapMutations({

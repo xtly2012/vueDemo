@@ -1,7 +1,12 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <nav>
+      <a @click="route(0)" href="javascript:void(0)">例子页</a>
+      <a @click="route(1)" href="javascript:void(0)">flex布局</a>
+    </nav>
+    <div class="app-router">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -12,6 +17,17 @@ export default {
   methods: {
     getData() {
       https.get('/test')
+    },
+    route(index) {
+      let link = '/'
+      switch(index) {
+        case 1 :
+          link = '/layout/flex'
+          break;
+        default :
+          link = '/'
+      }
+      this.$router.push(link)
     }
   }
 }
@@ -25,5 +41,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.app-router {
+  width: 100%;
 }
 </style>
