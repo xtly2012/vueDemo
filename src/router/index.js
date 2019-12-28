@@ -5,6 +5,7 @@ import Flex from '@/components/layout/Flex'
 import Figure from '@/components/layout/Figure'
 import verticalFlex from '@/components/layout/verticalFlex'
 import FlexTransition from '@/components/layout/FlexTransition'
+import Float from '@/components/layout/Float'
 
 Vue.use(Router)
 
@@ -30,6 +31,10 @@ export default new Router({
       path: '/layout/flexTransition',
       name: 'flexTransition',
       component: FlexTransition
+    },{
+      path: '/layout/float',
+      name: 'float',
+      component: Float
     }
   ]
 })

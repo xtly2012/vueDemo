@@ -6,6 +6,7 @@
       <a @click="route(2)" href="javascript:void(0)">css图形</a>
       <a @click="route(3)" href="javascript:void(0)">flex垂直布局</a>
       <a @click="route(4)" href="javascript:void(0)">补间动画</a>
+      <a @click="route(5)" href="javascript:void(0)">Float布局</a>
     </nav>
     <div class="app-router">
       <router-view/>
@@ -35,6 +36,9 @@ export default {
           break
         case 4 :
           link = '/layout/flexTransition'
+          break
+        case 5 :
+          link = '/layout/float'
           break
         default :
           link = '/'
