@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Flex from '@/components/layout/Flex'
 import Figure from '@/components/layout/Figure'
 import verticalFlex from '@/components/layout/verticalFlex'
+import FlexTransition from '@/components/layout/FlexTransition'
 
 Vue.use(Router)
 
@@ -25,6 +26,10 @@ export default new Router({
       path: '/layout/verticalFlex',
       name: 'verticalFlex',
       component: verticalFlex
+    },{
+      path: '/layout/flexTransition',
+      name: 'flexTransition',
+      component: FlexTransition
     }
   ]
 })
